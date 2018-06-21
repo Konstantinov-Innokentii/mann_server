@@ -1,11 +1,10 @@
 from flask import Flask, request
-from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Api,Resource
 from flask_marshmallow import Marshmallow
 
 app = Flask(__name__)
-app.config.from_object(Config)
+app.config.from_object('config')
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 api = Api(app)

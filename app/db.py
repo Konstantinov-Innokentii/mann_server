@@ -8,7 +8,7 @@ from app import app
 
 
 def create_session_factory():
-    engine = create_engine(app.config['DATABASE_URI'], echo=app.config['DATABASE_DEBUG_SQL'] and app.config['DATABASE_DEBUG_SQL'])
+    engine = create_engine(app.config['DATABASE_URL'], echo=app.config['DATABASE_DEBUG_SQL'] and app.config['DATABASE_DEBUG_SQL'])
 
     Session = sessionmaker()
     Session.configure(bind=engine, autoflush=False, autocommit=False)

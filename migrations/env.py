@@ -12,7 +12,7 @@ from app.db import Base
 # access to the values within the .ini file in use.
 config = context.config
 
-config.set_main_option('sqlalchemy.url', os.environ.get('SQLACLHEMY_DATABASE_URL', 'postgresql://fermer:qwerty@localhost:5432/mann'))
+config.set_main_option('sqlalchemy.url', os.environ.get('DATABASE_URL', app.config['DATABASE_URL']))
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
