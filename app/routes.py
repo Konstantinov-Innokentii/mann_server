@@ -7,10 +7,11 @@ from app.models import Dinner
 
 @app.route("/dinners", methods=["GET"])
 def check_dinner():
+    time = datetime.datetime.now().time().replace(second=0, microsecond=0)
     dinners = current_session.query(Dinner).all()
 
     for dinner in dinners:
-        dt = datetime.datetime.now().time().replace(second=0, microsecond=0)
+        dt = time
         if dinner.date == dt:
             return str(dinner.size)
         else:
