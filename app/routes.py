@@ -1,5 +1,4 @@
 from app import app
-from flask import request
 
 import datetime
 from flask_sqlalchemy_session import current_session

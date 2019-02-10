@@ -18,7 +18,6 @@ class DinnerResource(Resource):
         return dinner_schema.dump(dinner).data
 
     def delete(self, id):
-        dinner = current_session.query(Dinner).get(id)
         current_session.query(Dinner).filter(Dinner.id == id).delete()
         current_session.commit()
         return '', 204
@@ -37,8 +36,6 @@ class DinnerListResource(Resource):
         return dinners_schema.dump(dinners).data
 
     def post(self):
-        print("REQ")
-        print(request)
         dinner = dinner_schema.load(request.json).data
         current_session.add(dinner)
         current_session.commit()

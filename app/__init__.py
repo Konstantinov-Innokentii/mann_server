@@ -1,13 +1,11 @@
-from flask import Flask, request
-from flask_restful import Api,Resource
+from flask import Flask
+from flask_restful import Api
 from flask_marshmallow import Marshmallow
 
 app = Flask(__name__)
 app.config.from_object('config')
 ma = Marshmallow(app)
 api = Api(app)
-
-
 
 from app import routes
 from app import models
