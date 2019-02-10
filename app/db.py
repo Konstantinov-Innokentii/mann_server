@@ -27,6 +27,7 @@ convention = {
     "pk": "pk_%(table_name)s"
 }
 
+
 class Base(object):
 
     @property
